@@ -22,14 +22,15 @@ int	ft_atoi(const char *str)
 	signe = 1;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (ft_strncmp(str,"9223372036854775807",19) > 0 && ft_strlen(str) > 19 && str[0] != '-')
+	if (ft_strncmp(str, "9223372036854775807", 19) > 0
+		&& ft_strlen(str) > 19 && str[0] != '-')
 		return (-1);
-	if (ft_strncmp(str,"-9223372036854775808",20) > 0 && ft_strlen(str) > 20)
+	if (ft_strncmp(str, "-9223372036854775808", 20) > 0 && ft_strlen(str) > 20)
 		return (0);	
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-			signe = - signe;
+			signe = -signe;
 		i++;
 	}
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
