@@ -19,7 +19,7 @@ void    alloc(char **s, size_t count)
         return (NULL);
 }
 
-size_t count(char *s,char c)
+size_t count(char const *s,char c)
 {
     size_t  count;
 
@@ -34,7 +34,7 @@ size_t count(char *s,char c)
     return (count);
 }
 
-char *changec(char *p, char c)
+char *changec(char const *p, char c)
 {
     int i;
     i = 0;
