@@ -26,7 +26,7 @@ int	ft_atoi(const char *str)
 		&& ft_strlen(str) > 19 && str[0] != '-')
 		return (-1);
 	if (ft_strncmp(str, "-9223372036854775808", 20) > 0 && ft_strlen(str) > 20)
-		return (0);	
+		return (0);
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')

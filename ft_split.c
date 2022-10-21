@@ -15,7 +15,7 @@
 void	alloc(char **s, size_t count)
 {
 	s = (char **)malloc(sizeof(char *) * (count + 2));
-	if (*s == NULL)
+	if (s == NULL)
 		return ;
 }
 
@@ -30,13 +30,13 @@ size_t	count(char const *s, char c)
 		return (0);
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == (unsigned char)c)
 			count++;
 	}
 	return (count);
 }
 
-char	*changec(const char *p, char c)
+char	*changec(char *p, char c)
 {
 	int	i;
 
@@ -45,7 +45,7 @@ char	*changec(const char *p, char c)
 		return (NULL);
 	while (p[i])
 	{
-		if (p[i] == c)
+		if (p[i] == (unsigned char)c)
 			p[i] = '\0';
 		i++;
 	}
