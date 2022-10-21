@@ -36,7 +36,7 @@ size_t	count(char const *s, char c)
 	return (count);
 }
 
-char	*changec(char *p, char c)
+char	*changec(const char *p, char c)
 {
 	int	i;
 
