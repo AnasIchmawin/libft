@@ -6,7 +6,7 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:49:35 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/13 18:06:39 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/10/21 11:41:17 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	alloc(char **s, size_t count)
 size_t	count(char const *s, char c)
 {
 	size_t	count;
-	int i;
+	int		i;
 
 	count = 0;
 	i = 0;
@@ -57,18 +57,18 @@ char	**ft_split(char const *s, char c)
 	char	**p;
 	char	*tmp;
 	size_t	i;
-	size_t	len;
 
 	i = 0;
-	len = 0;
 	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
 		i++;
+	p = NULL;
 	alloc(p, count(s, c));
-	tmp = changec(s, c);
+	tmp = changec((char *)s, c);
 	while (tmp[i])
 	{
 		if (tmp[i] == '\0' && tmp[i + 1] != '\0')
 			i++;
 		i++;
 	}
+	return (p);
 }
