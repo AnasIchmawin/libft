@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	exist(char s, char const *set)
+int	illa(char s, char const *set)
 {
 	int	i;
 
@@ -36,12 +36,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (set == NULL)
 		return (ft_strdup(s1));
 	i = 0;
-	while (exist(s1[i], set) == 1)
+	while (illa(s1[i], set) == 1)
 		i++;
 	if (i == ft_strlen(s1))
 		return (ft_strdup(""));
 	j = ft_strlen(s1);
-	while (exist(s1[j - 1], set) == 1)
+	while (illa(s1[j - 1], set) == 1)
 		j--;
 	s = ft_substr(s1, i, j - i);
 	return (s);
