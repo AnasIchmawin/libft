@@ -12,63 +12,77 @@
 
 #include "libft.h"
 
-void	alloc(char **s, size_t count)
+char    **alloc(char **s, size_t count)
 {
-	s = (char **)malloc(sizeof(char *) * (count + 2));
-	if (s == NULL)
-		return ;
+    s = (char **)ft_calloc(sizeof(char *) , (count + 1));
+    if (s == NULL)
+        return NULL;
+	return (s);
 }
 
-size_t	count(char const *s, char c)
+size_t    count(const char *s, char c)
 {
-	size_t	count;
-	int		i;
+    int    i;
+    int    count;
 
-	count = 0;
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i])
-	{
-		if (s[i] == (unsigned char)c)
-			count++;
-	}
-	return (count);
+    i = 0;
+    count = 0;
+    while (s[i] != '\0')
+    {
+        while (s[i] == c)
+            i++;
+        if (s[i] != '\0')
+        {
+            if (( i == 0 || s[i - 1] == c))
+                count++;
+            i++;
+        }
+    }
+    return (count);
 }
 
-char	*changec(char *p, char c)
+char **free_s(char **p)
 {
-	int	i;
+	size_t i;
 
 	i = 0;
-	if (p == NULL)
-		return (NULL);
-	while (p[i])
+	while(p[i])
 	{
-		if (p[i] == (unsigned char)c)
-			p[i] = '\0';
+		free(p[i]);
 		i++;
 	}
-	return (p);
+	free(p);
+	return(p);
 }
 
-char	**ft_split(char const *s, char c)
+char    **ft_split(char const *s, char c)
 {
-	char	**p;
-	char	*tmp;
-	size_t	i;
+    char    **p;
+    size_t    i;
+    size_t    j;
 
-	i = 0;
-	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
-		i++;
+    i = 0;
+    if (!s)
+        return (NULL);
 	p = NULL;
-	alloc(p, count(s, c));
-	tmp = changec((char *)s, c);
-	while (tmp[i])
-	{
-		if (tmp[i] == '\0' && tmp[i + 1] != '\0')
+    p = alloc(p, count(s, c));
+	if(!p)
+		return (NULL);
+    while (*s)
+    {
+    	j = 0;
+    	while(*s == c)
+          s++;
+    	while (s[j] != '\0' && s[j] != c)
+        	j++;
+		if(j != 0)
+		{
+    		p[i] = ft_substr(s,0,j);
+			if(p[i] == NULL)
+				return(free_s(p));
 			i++;
-		i++;
-	}
-	return (p);
+		}
+		s = s + j;
+    }
+    return (p);
 }
