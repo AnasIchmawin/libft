@@ -6,15 +6,15 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:08:03 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/09 19:03:22 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:43:28 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*s;
 
 	if (!s1)

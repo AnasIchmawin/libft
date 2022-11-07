@@ -6,11 +6,20 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 18:18:07 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/10 16:29:54 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:38:57 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*test(int n)
+{
+	if (n == 0)
+		return (ft_strdup("0"));
+	if (n == -2147483648)
+		return (ft_strdup("-2147483648"));
+	return (NULL);
+}
 
 int	size(int n)
 {
@@ -32,19 +41,16 @@ int	size(int n)
 
 char	*ft_itoa(int n)
 {
-	int	i;
+	int		i;
 	char	*p;
-	int	si;
+	int		si;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
+	if (n == 0 || n == -2147483648)
+		return (test(n));
 	si = size(n);
-	p = (char *)malloc(sizeof(char) * (si + 1));
+	p = (char *)ft_calloc(sizeof(char), (si + 1));
 	if (p == NULL)
 		return (NULL);
-	p[si] = '\0';
 	if (n < 0)
 	{
 		p[0] = '-';

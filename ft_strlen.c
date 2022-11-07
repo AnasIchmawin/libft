@@ -6,12 +6,12 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:38:04 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/08 10:38:08 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:43:54 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t		ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 

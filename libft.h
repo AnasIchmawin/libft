@@ -6,7 +6,7 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 12:57:06 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/09 18:38:58 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:50:56 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void		*content;
+	void			*content;
 	struct s_list	*next;
 }t_list;
 

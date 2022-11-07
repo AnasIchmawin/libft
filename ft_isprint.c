@@ -6,14 +6,14 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 10:37:27 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/09 09:37:21 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:29:43 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
 int	ft_isprint(int c)
 {
-	if(c >= 32 && c <= 126)
+	if (c >= 32 && c <= 126)
 		return (1);
 	return (0);
 }

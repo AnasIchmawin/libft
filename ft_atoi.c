@@ -6,16 +6,30 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 12:00:36 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/09 17:31:16 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:24:42 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+
+int	signef(char str, long *i)
+{
+	int	signe;
+
+	signe = 1;
+	if (str == '-' || str == '+')
+	{
+		if (str == '-')
+			signe = -signe;
+		(*i)++;
+	}
+	return (signe);
+}
 
 int	ft_atoi(const char *str)
 {
 	long	i;
 	long	n;
-	int	signe;
+	int		signe;
 
 	i = 0;
 	n = 0;
@@ -27,12 +41,7 @@ int	ft_atoi(const char *str)
 		return (-1);
 	if (ft_strncmp(str, "-9223372036854775808", 20) > 0 && ft_strlen(str) > 20)
 		return (0);
-	if (str[i] == '-' || str[i] == '+')
-	{
-		if (str[i] == '-')
-			signe = -signe;
-		i++;
-	}
+	signe = signef(str[i], &i);
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
 		n = n * 10 + (str[i] - 48);

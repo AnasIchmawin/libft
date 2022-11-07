@@ -6,7 +6,7 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 19:12:12 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/13 19:12:28 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:40:52 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	{
 		l = ft_lstlast(*lst);
 		l -> next = new;
-	} 
+	}
 }

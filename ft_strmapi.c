@@ -6,7 +6,7 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 17:33:42 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/10/10 17:33:44 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/07 18:46:03 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
-	char	*st;
+	char			*st;
 
 	if (!s)
 		return (NULL);
