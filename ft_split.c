@@ -6,14 +6,16 @@
 /*   By: aichmawi <aichmawi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:49:35 by aichmawi          #+#    #+#             */
-/*   Updated: 2022/11/07 17:46:42 by aichmawi         ###   ########.fr       */
+/*   Updated: 2022/11/08 09:06:05 by aichmawi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**alloc(char **s, size_t count)
+char	**alloc(size_t count)
 {
+	char	**s;
+
 	s = (char **)ft_calloc(sizeof(char *), (count + 1));
 	if (s == NULL)
 		return (NULL);
@@ -62,10 +64,7 @@ char	**ft_split(char const *s, char c)
 	size_t	j;
 
 	i = 0;
-	if (!s)
-		return (NULL);
-	p = NULL;
-	p = alloc(p, count(s, c));
+	p = alloc(count(s, c));
 	if (!p)
 		return (NULL);
 	while (*s)
