@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		j = 0;
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		while (s[j] != '\0' && s[j] != c)
 			j++;
