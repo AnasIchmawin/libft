@@ -45,7 +45,7 @@ size_t	count(const char *s, char c)
 
 char	**free_s(char **p)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	while (p[i])
@@ -60,8 +60,8 @@ char	**free_s(char **p)
 char	**ft_split(char const *s, char c)
 {
 	char	**p;
-	size_t	i;
-	size_t	j;
+	int		i;
+	int		j;
 
 	i = 0;
 	p = alloc(count(s, c));
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		j = 0;
-		while (*s && *s == c)
+		while (*s == c)
 			s++;
 		while (s[j] != '\0' && s[j] != c)
 			j++;

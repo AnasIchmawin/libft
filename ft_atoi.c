@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	signef(char str, long *i)
+int	signef(char str, int *i)
 {
 	int	signe;
 
@@ -27,20 +27,14 @@ int	signef(char str, long *i)
 
 int	ft_atoi(const char *str)
 {
-	long	i;
-	long	n;
+	int		i;
+	int		n;
 	int		signe;
 
 	i = 0;
 	n = 0;
-	signe = 1;
 	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
 		i++;
-	if (ft_strncmp(str, "9223372036854775807", 19) > 0
-		&& ft_strlen(str) > 19 && str[0] != '-')
-		return (-1);
-	if (ft_strncmp(str, "-9223372036854775808", 20) > 0 && ft_strlen(str) > 20)
-		return (0);
 	signe = signef(str[i], &i);
 	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
 	{
