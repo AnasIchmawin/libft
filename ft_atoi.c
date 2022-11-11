@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	signef(char str, int *i)
+static int	signef(char str, int *i)
 {
 	int	signe;
 

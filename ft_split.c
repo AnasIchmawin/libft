@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**alloc(size_t count)
+static char	**alloc(size_t count)
 {
 	char	**s;
 
@@ -22,7 +22,7 @@ char	**alloc(size_t count)
 	return (s);
 }
 
-size_t	count(const char *s, char c)
+static size_t	count(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -43,7 +43,7 @@ size_t	count(const char *s, char c)
 	return (count);
 }
 
-char	**free_s(char **p)
+static char	**free_s(char **p)
 {
 	int	i;
 

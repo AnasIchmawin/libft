@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	illa(char s, char const *set)
+static int	illa(char s, char const *set)
 {
 	int	i;
 

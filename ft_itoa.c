@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*test(int n)
+static char	*test(int n)
 {
 	if (n == 0)
 		return (ft_strdup("0"));
@@ -21,7 +21,7 @@ char	*test(int n)
 	return (NULL);
 }
 
-int	size(int n)
+static int	size(int n)
 {
 	int	i;
 
