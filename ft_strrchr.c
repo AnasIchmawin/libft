@@ -21,10 +21,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			a = (char *)(s + i);
+			a = s + i;
 		i++;
 	}
 	if (s[i] == (char)c)
-		a = (char *)(s + i);
-	return ((char *)a);
+		a = s + i;
+	return (a);
 }
