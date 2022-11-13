@@ -61,10 +61,10 @@ bonus_obj = $(bonus_src:.c=.o)
 all : $(NAME)
 
 $(NAME) : $(OBJ) libft.h
-	ar rcs $@ $^   
+	ar rc $@ $^   
 
 bonus : $(bonus_obj) libft.h 
-	ar rcs $(NAME) $^ 
+	ar rc $(NAME) $^ 
 
 %.o : %.c libft.h
 	$(CC) $(FLAGS)  -c $< -o $@ 

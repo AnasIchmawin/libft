@@ -31,7 +31,7 @@ static size_t	count(const char *s, char c)
 	count = 0;
 	while (s[i] != '\0')
 	{
-		while (s[i] == c)
+		while (s[i] && s[i] == c)
 			i++;
 		if (s[i] != '\0')
 		{
@@ -70,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		j = 0;
-		while (*s == c)
+		while (*s && *s == c)
 			s++;
 		while (s[j] != '\0' && s[j] != c)
 			j++;
